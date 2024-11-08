@@ -1,0 +1,30 @@
+@FastEndpointsPolymorphism_HostAddress = http://localhost:5001
+
+GET {{FastEndpointsPolymorphism_HostAddress}}/api/person/
+Accept: application/json
+
+###
+
+POST {{FastEndpointsPolymorphism_HostAddress}}/api/person/
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "animals": [
+    {
+      "$type": "Cat",
+      "educationLevel": "PhD",
+      "species": "Felis catus",
+      "name": "Whiskers"
+    },
+    {
+      "$type": "Dog",
+      "favoriteToy": "Ball",
+      "species": "Canis familiaris",
+      "name": "Fido"
+    }
+  ]
+}
+
+###
